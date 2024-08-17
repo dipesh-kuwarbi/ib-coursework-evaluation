@@ -67,3 +67,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+.spinner-border {
+  border-width: 4px;
+  border-style: solid;
+  border-color: #007bff transparent transparent transparent;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

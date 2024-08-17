@@ -3,16 +3,19 @@ import { persist } from "zustand/middleware";
 
 export const useCourseworkStore = create()(
   persist(
-    (set) => ({
+    (set, get) => ({
       courseworkList: [],
-      addCoursework: (coursework) =>
+      addCoursework: (coursework) => {
+        console.log(coursework);
         set((state) => ({
           courseworkList: [...state.courseworkList, coursework],
-        })),
+        }));
+      },
       getCoursework: (id) =>
-        set((state) =>
+        get((state) =>
           state.courseworkList.find((coursework) => coursework.id === id)
         ),
+      getCourseWorkList: () => get((state) => state.courseworkList),
     }),
     {
       name: "coursework-storage", // key for local storage
