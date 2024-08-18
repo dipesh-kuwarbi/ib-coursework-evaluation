@@ -33,8 +33,11 @@ const CourseWorkForm = () => {
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       const preview = URL.createObjectURL(file);
-
-      setPdfFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPdfFile(reader.result);
+      };
+      reader.readAsDataURL(file);
       setPreviewUrl(preview);
       setFilename(file.path);
     });
@@ -84,8 +87,9 @@ const CourseWorkForm = () => {
     };
     addCoursework(data);
     setIsEvaluating(false);
+    console.log(pdfFile);
     router.push(`/coursework/${fileId}`);
-  }, [addCoursework]);
+  }, [addCoursework, subject, courseType, pdfFile, EvaluationData, previewUrl]);
 
   const checkIsDisabled = () => {
     if (courseType !== "Tok Essay") {
