@@ -67,7 +67,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="sticky top-0 h-lvh  p-2 font-mont sm:block">
+    <div className="sticky top-0 hidden h-lvh  p-2 font-mont sm:block">
       <div className="z-[100] flex h-full flex-col text-clip rounded-2xl bg-[#F8FAFC] p-2 md:w-[52px]">
         <div className="flex items-center justify-center  bg-[rgba(105,71,191,0.04)]">
           <svg

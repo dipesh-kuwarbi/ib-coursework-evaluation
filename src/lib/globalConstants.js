@@ -1,15 +1,17 @@
 export const EvaluationData = {
   "Tok Essay": {
-    Remark: "D",
+    Remark: "Average",
     totalWords: 7785,
     totalTime: 29.6,
     score: 12,
+    color: "#F9C94D",
     total: 30,
     criterias: [
       {
         id: "A",
         name: "Understanding Knowledge Questions",
         score: 4,
+        color: "#F9C94D",
         total: 10,
         headline:
           "The essay attempts to address knowledge questions related to reason as a way of knowing, but it often deviates into personal anecdotes and lacks depth in its analysis. The examples provided are not always relevant or effectively analyzed, leading to a superficial treatment of the topic. The organization is also problematic, with transitions that fail to create a coherent flow of ideas.",
@@ -27,8 +29,9 @@ export const EvaluationData = {
       {
         id: "B",
         name: "Quality of Analysis of Knowledge Questions",
-        score: 4,
+        score: 2,
         total: 10,
+        color: "#F9C94D",
         headline:
           "The essay attempts to explore the strengths and weaknesses of reason as a way of knowing, but it often deviates from the main topic and lacks depth in its analysis. The examples provided are sometimes unclear and not effectively evaluated, leading to a lack of coherence in the argumentation.",
         strengths: [
@@ -45,7 +48,8 @@ export const EvaluationData = {
       {
         id: "C",
         name: "Clarity and Structure",
-        score: 4,
+        score: 6,
+        color: "#3BC289",
         total: 10,
         headline:
           "The essay demonstrates some effort to engage with the topic and includes personal experiences to illustrate points. However, it lacks clear structure and coherence, with many paragraphs not logically connected. The analysis of knowledge issues is often superficial and lacks depth.",
@@ -63,16 +67,18 @@ export const EvaluationData = {
     ],
   },
   "Business Management": {
-    Remark: "E",
+    Remark: "Poor",
     totalWords: 2213,
     totalTime: 8.4,
+    color: "#EB751F",
     score: 6,
     total: 28,
     criterias: [
       {
         id: "A",
         name: "Focus and Method",
-        score: 1,
+        score: 2,
+        color: "#F9C94D",
         total: 6,
         headline:
           "The essay lacks a specific and sharply focused research question, which is critical for a high-quality EE in business management. The title 'Business' is too broad and does not encourage analysis, evaluation, or synthesis. The methodology is not clearly defined, and the essay appears to be more descriptive than analytical.",
@@ -86,7 +92,8 @@ export const EvaluationData = {
       {
         id: "B",
         name: "Knowledge and Understanding",
-        score: 2,
+        score: 1,
+        color: "#EB751F",
         total: 6,
         headline:
           "The essay provides a general overview of what an extended essay in business management should entail but lacks specific application to a particular research question. The use of business terminology is limited and not consistently applied throughout the text.",
@@ -104,6 +111,7 @@ export const EvaluationData = {
         id: "C",
         name: "Critical Thinking",
         score: 2,
+        color: "#EB751F",
         total: 12,
         headline:
           "The essay provides a broad overview of the guidelines for writing an Extended Essay in Business and Management but lacks a specific research question and detailed analysis. The content is largely descriptive and does not demonstrate critical thinking or application of business theories.",
@@ -122,6 +130,7 @@ export const EvaluationData = {
         id: "D",
         name: "Presentation",
         total: 4,
+        color: "#EB751F",
         score: 1,
         headline:
           "The essay lacks several key elements required for proper presentation. It does not include a title page, table of contents, or page numbers. The structure is not well-defined with sections and subheadings, and there is no bibliography or proper referencing.",
@@ -137,7 +146,8 @@ export const EvaluationData = {
     ],
   },
   Economics: {
-    Remark: "B",
+    Remark: "Excellent",
+    color: "#3BC289",
     totalWords: 6844,
     totalTime: 26.5,
     score: 10,
@@ -147,6 +157,7 @@ export const EvaluationData = {
         id: "A",
         name: "Focus and Method",
         score: 5,
+        color: "#3BC289",
         total: 6,
         headline:
           "The essay demonstrates a clear understanding of the topic and context, applying relevant economic theories effectively. The research question is specific and focused, and the methodology is well-outlined, including both primary and secondary research. However, some areas could benefit from further refinement and clarity.",
@@ -165,6 +176,7 @@ export const EvaluationData = {
         id: "B",
         name: "Knowledge and Understanding",
         score: 5,
+        color: "#3BC289",
         total: 6,
         headline:
           "The essay demonstrates a solid understanding of economic theory, particularly monopolistic competition, and applies it to the restaurant market in Neue-Mitte Oberhausen. The use of primary research, including surveys and interviews, is commendable and adds depth to the analysis. However, there are some inaccuracies in the application of economic models and a few areas where the integration of theory and real-world data could be improved.",
@@ -182,7 +194,8 @@ export const EvaluationData = {
     ],
   },
   "Language And Literature": {
-    Remark: "B",
+    Remark: "Good",
+    color: "#3BC289",
     totalWords: 9876,
     totalTime: 37.5,
     score: 24,
@@ -192,6 +205,7 @@ export const EvaluationData = {
         id: "A",
         name: "Focus and Method",
         score: 4,
+        color: "#3BC289",
         total: 6,
         headline:
           "The essay demonstrates a clear understanding of the topic and research question, focusing on the comparative study of Indian and Western aesthetics in literature. However, the research question could be more sharply focused, and the methodology needs further refinement to ensure the appropriateness and effectiveness of sources and methods.",
@@ -210,6 +224,7 @@ export const EvaluationData = {
         id: "B",
         name: "Knowlege and Understanding",
         score: 5,
+        color: "#3BC289",
         total: 6,
         headline:
           "The essay demonstrates a thorough understanding of the topic, effectively using subject-specific terminology and concepts. It places the research within an appropriate academic context, comparing Indian and Western aesthetics. However, there are areas where the context could be more concise and focused.",
@@ -228,6 +243,7 @@ export const EvaluationData = {
         id: "C",
         name: "Critical Thinking",
         score: 8,
+        color: "#3BC289",
         total: 12,
         headline:
           "The essay demonstrates good critical thinking with clear analysis and evaluation. It effectively compares Indian and Western aesthetics, providing thorough explanations and examples. However, there are areas where the analysis could be more focused and the discussion more coherent.",
@@ -246,6 +262,7 @@ export const EvaluationData = {
         id: "D",
         name: "Presentation",
         score: 2,
+        color: "#3BC289",
         total: 4,
         headline:
           "The essay demonstrates an acceptable presentation but has several weaknesses. The structure is somewhat clear but lacks consistency in formatting and proper organization. The layout includes essential components but is marred by inconsistencies and errors.",
@@ -264,6 +281,7 @@ export const EvaluationData = {
         id: "E",
         name: "Engagement",
         total: 6,
+        color: "#3BC289",
         score: 5,
         headline:
           "The essay demonstrates excellent engagement with the research process. The reflections show a high degree of intellectual and personal engagement, detailing the decision-making and planning process throughout the essay. The student provides analytical and evaluative reflections, demonstrating intellectual initiative and creativity.",
@@ -281,8 +299,9 @@ export const EvaluationData = {
     ],
   },
   "Internal Assessment": {
-    Remark: "E",
+    Remark: "Poor",
     score: 2,
+    color: "#EB751F",
     totalScore: 20,
     totalWords: 3453,
     totalTime: 23.5,
@@ -292,6 +311,7 @@ export const EvaluationData = {
         id: "A",
         name: "Presentation",
         totalScore: 4,
+        color: "#EB751F",
         score: 1,
         headline:
           "The IA lacks coherence and organization. The sections are not well-defined, and the presentation is cluttered and difficult to follow.",
@@ -306,6 +326,7 @@ export const EvaluationData = {
         id: "B",
         name: "Mathematical Communication",
         totalScore: 3,
+        color: "#EB751F",
         score: 1,
         headline:
           "The mathematical communication is partially appropriate but lacks consistency and clarity. Key terms and notations are not well-defined.",
@@ -320,6 +341,7 @@ export const EvaluationData = {
         id: "C",
         name: "Personal Engagement",
         totalScore: 3,
+        color: "#EB751F",
         score: 0,
         headline:
           "The provided document is a math skills assessment, not an IB DP Mathematics Internal Assessment. It lacks personal engagement, initiative, and creativity required for Criterion C.",
@@ -333,6 +355,7 @@ export const EvaluationData = {
         id: "D",
         name: "Reflection",
         totalScore: 3,
+        color: "#EB751F",
         score: 0,
         headline:
           "The essay does not meet the standard described by the descriptors for Criterion D: Reflection. It lacks any form of reflection, analysis, or evaluation of the mathematical exploration.",
@@ -347,6 +370,7 @@ export const EvaluationData = {
         id: "E",
         name: "Use of Mathematics",
         totalScore: 6,
+        color: "#EB751F",
         score: 0,
         headline:
           "The submission does not meet the standards for Criterion E: Use of Mathematics. The content is a basic math skills assessment rather than an exploration of mathematical concepts.",

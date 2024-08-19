@@ -2,13 +2,14 @@ import React, { useMemo } from "react";
 import { Viewer, Worker } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
-import { FiZoomIn, FiZoomOut, FiMaximize } from "react-icons/fi";
 import { fullScreenPlugin } from "@react-pdf-viewer/full-screen";
 import { zoomPlugin } from "@react-pdf-viewer/zoom";
+import SvgFullScreenIcon from "../../public/icons/SvgFullScreenIcon";
+import SvgExpandIcon from "../../public/icons/SvgExpandIcon";
 
-const PdfViewer = ({ pdfFile }) => {
+const PdfViewer = ({ pdfFile, pdfName, isCollapsed, handleCollapse }) => {
   const zoomPluginInstance = zoomPlugin();
-  const { ZoomInButton, ZoomOutButton } = zoomPluginInstance;
+  const { ZoomInButton, ZoomOutButton, CurrentScale } = zoomPluginInstance;
   const fullScreenPluginInstance = fullScreenPlugin();
   const { EnterFullScreenButton } = fullScreenPluginInstance;
 
@@ -23,50 +24,75 @@ const PdfViewer = ({ pdfFile }) => {
   }, [pdfFile]);
 
   const blobUrl = URL.createObjectURL(pdfBlob);
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen p-4 bg-gray-100">
-      <div className="w-full flex justify-between items-center ">
-        {/* PDF Name */}
-        <h2 className="text-lg font-bold">{pdfFile?.name}</h2>
-        {/* Controls */}
-        <div className="flex gap-2 items-center">
-          <ZoomOutButton>
-            {(props) => (
-              <button
-                onClick={props.onClick}
-                disabled={props.isDisabled}
-                className="p-2 bg-gray-300 rounded hover:bg-gray-400 transition"
-              >
-                <FiZoomOut size={20} />
-              </button>
-            )}
-          </ZoomOutButton>
-          <ZoomInButton>
-            {(props) => (
-              <button
-                onClick={props.onClick}
-                disabled={props.isDisabled}
-                className="p-2 bg-gray-300 rounded hover:bg-gray-400 transition"
-              >
-                <FiZoomIn size={20} />
-              </button>
-            )}
-          </ZoomInButton>
-          <EnterFullScreenButton>
-            {(props) => (
-              <button
-                onClick={props.onClick}
-                className="p-2 bg-gray-300 rounded hover:bg-gray-400 transition"
-              >
-                <FiMaximize size={20} />
-              </button>
-            )}
-          </EnterFullScreenButton>
+    <div
+      className={`w-full max-w-[972px] ${
+        isCollapsed ? false : "flex-1"
+      } overflow-hidden transition-all duration-300 ease-in-out transform hover:shadow-2xl rounded-3xl rounded-b-none sm:min-w-[280px] lg:min-w-[50%]`}
+    >
+      <div className="flex flex-wrap justify-between gap-2 bg-[rgba(255,255,255,0.48)] p-3">
+        <div className="max-w-[184px] rounded-xl bg-white px-3 py-1">
+          <p className="w-full truncate font-bricolage text-sm font-semibold leading-[normal] text-[#3d404b]">
+            {pdfName}
+          </p>
+        </div>
+        <div className="flex w-full items-center justify-between gap-3 xl:w-auto">
+          <div className="flex items-center gap-1.5">
+            <ZoomOutButton>
+              {(props) => (
+                <button
+                  onClick={props.onClick}
+                  disabled={props.isDisabled}
+                  className="p-2 bg-gray-300 rounded hover:bg-gray-400 transition"
+                >
+                  {/* <FiZoomOut size={20} /> */}
+                </button>
+              )}
+            </ZoomOutButton>
+            <span className="font-bricolage text-sm font-medium leading-[normal] text-[#7a8196]">
+              <CurrentScale>
+                {(props) => `${(props.scale * 100).toFixed(0)}%`}
+              </CurrentScale>
+            </span>
+            <ZoomInButton>
+              {(props) => (
+                <button
+                  onClick={props.onClick}
+                  disabled={props.isDisabled}
+                  className="p-2 bg-gray-300 rounded hover:bg-gray-400 transition"
+                >
+                  {/* <FiZoomIn size={20} /> */}
+                </button>
+              )}
+            </ZoomInButton>
+          </div>
+          <div className="flex gap-3">
+            <EnterFullScreenButton>
+              {(props) => (
+                <button
+                  onClick={props.onClick}
+                  className="rounded-full bg-white p-1 hover:bg-gray-400 transition"
+                >
+                  <SvgFullScreenIcon />
+                </button>
+              )}
+            </EnterFullScreenButton>
+            <div
+              className="hidden sm:flex items-center gap-2 rounded-full bg-white p-1 pr-3 hover:bg-gray-200 transition cursor-pointer"
+              onClick={handleCollapse}
+            >
+              <SvgExpandIcon />
+              <p className="text-xs font-bold text-[#5b6170]">
+                {isCollapsed ? "Expand" : "Collapse"}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* PDF Viewer */}
-      <div className="w-full h-full border rounded-lg shadow-lg">
+      <div className="h-[calc(100lvh-175px)] overflow-y-scroll rounded-b-[24px] border border-[#c1ccd6] bg-white shadow-lg">
         <Worker
           workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}
         >
