@@ -80,14 +80,14 @@ This repository contains the source code for the IB Coursework Evaluation web ap
 
 3. Running the Development Server
 
-```bash
-npm run dev
+   ```bash
+   npm run dev
 
-```
+   ```
 
 4. Building for Production
 
-```bash
-npm run build
+   ```bash
+   npm run build
 
-```
+   ```
