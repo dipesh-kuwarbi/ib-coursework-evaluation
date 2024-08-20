@@ -1,5 +1,3 @@
-"use client";
-
 import { links } from "@/lib/globalConstants";
 import NavItem from "./NavItem";
 import SvgLogo from "../../public/icons/SvgLogo";
