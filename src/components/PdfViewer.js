@@ -8,23 +8,33 @@ import SvgFullScreenIcon from "../../public/icons/SvgFullScreenIcon";
 import SvgExpandIcon from "../../public/icons/SvgExpandIcon";
 import { transitionClass } from "@/lib/globalConstants";
 
-const PdfViewer = ({ pdfFile, pdfName, isCollapsed, handleCollapse }) => {
+const PdfViewer = ({
+  pdfFile,
+  pdfName,
+  isCollapsed,
+  handleCollapse,
+  isExample,
+}) => {
   const zoomPluginInstance = zoomPlugin();
   const { ZoomInButton, ZoomOutButton, CurrentScale } = zoomPluginInstance;
   const fullScreenPluginInstance = fullScreenPlugin();
   const { EnterFullScreenButton } = fullScreenPluginInstance;
 
   const pdfBlob = useMemo(() => {
-    const byteCharacters = atob(pdfFile.split(",")[1]);
-    const byteNumbers = new Array(byteCharacters.length);
-    for (let i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    if (!isExample) {
+      const byteCharacters = atob(pdfFile.split(",")[1]);
+      const byteNumbers = new Array(byteCharacters.length);
+      for (let i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+      }
+      const byteArray = new Uint8Array(byteNumbers);
+      return new Blob([byteArray], { type: "application/pdf" });
     }
-    const byteArray = new Uint8Array(byteNumbers);
-    return new Blob([byteArray], { type: "application/pdf" });
-  }, [pdfFile]);
+  }, [pdfFile, isExample]);
 
-  const blobUrl = URL.createObjectURL(pdfBlob);
+  const blobUrl = isExample
+    ? "/language-sample.pdf"
+    : URL.createObjectURL(pdfBlob);
 
   return (
     <div
@@ -33,9 +43,9 @@ const PdfViewer = ({ pdfFile, pdfName, isCollapsed, handleCollapse }) => {
       } ${transitionClass} overflow-hidden hover:shadow-2xl rounded-3xl rounded-b-none sm:min-w-[280px] lg:min-w-[50%]`}
     >
       <div className="flex flex-wrap justify-between gap-2 bg-[rgba(255,255,255,0.48)] p-3">
-        <div className="max-w-[184px] rounded-xl bg-white px-3 py-1">
-          <p className="w-full truncate font-bricolage text-sm font-semibold leading-[normal] text-[#3d404b]">
-            {pdfName}
+        <div className="flex max-w-[184px] items-center rounded-xl bg-white px-3 py-1">
+          <p className="w-full  truncate font-bricolage text-sm font-semibold leading-[normal] text-[#3d404b]">
+            {isExample ? "Sample" : pdfName}
           </p>
         </div>
         <div className="flex w-full items-center justify-between gap-3 xl:w-auto">
@@ -46,9 +56,7 @@ const PdfViewer = ({ pdfFile, pdfName, isCollapsed, handleCollapse }) => {
                   onClick={props.onClick}
                   disabled={props.isDisabled}
                   className="p-2 bg-gray-300 rounded hover:bg-gray-400 transition"
-                >
-                  {/* <FiZoomOut size={20} /> */}
-                </button>
+                ></button>
               )}
             </ZoomOutButton>
             <span className="font-bricolage text-sm font-medium leading-[normal] text-[#7a8196]">
@@ -62,9 +70,7 @@ const PdfViewer = ({ pdfFile, pdfName, isCollapsed, handleCollapse }) => {
                   onClick={props.onClick}
                   disabled={props.isDisabled}
                   className="p-2 bg-gray-300 rounded hover:bg-gray-400 transition"
-                >
-                  {/* <FiZoomIn size={20} /> */}
-                </button>
+                ></button>
               )}
             </ZoomInButton>
           </div>

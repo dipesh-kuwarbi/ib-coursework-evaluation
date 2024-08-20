@@ -43,6 +43,9 @@ const CourseCard = ({ details, isExample }) => {
 
   const heading =
     "How does the temperature of a Copper pipe affect the time it takes a magnet to fall through";
+  const redirect = isExample
+    ? "coursework/example"
+    : `coursework/${details.id}`;
 
   return (
     <div
@@ -53,9 +56,7 @@ const CourseCard = ({ details, isExample }) => {
       style={{
         background: `${gradient}, rgba(255, 255, 255, 0.64)`,
       }}
-      onClick={() => {
-        !isExample && router.push(`coursework/${details.id}`);
-      }}
+      onClick={() => router.push(redirect)}
     >
       <div className="hidden h-[160px] w-[120px] shrink-0 flex-col items-center justify-center overflow-hidden rounded-[8px] border border-neutrals-100 lg:flex">
         <div className="flex items-center justify-center rounded-[6px] border border-neutrals-200 h-full w-full bg-white">

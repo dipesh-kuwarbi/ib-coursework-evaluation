@@ -86,28 +86,28 @@ const CourseWorkForm = () => {
 
   const handleCourseEvaluation = useCallback(() => {
     setIsEvaluating(true);
+    const fileId = uuidv4();
+    const evaluatedData = subject
+      ? EvaluationData[subject]
+      : EvaluationData[courseType];
+    const data = {
+      id: fileId,
+      file: pdfFile,
+      fileName: fileName,
+      courseName: courseType,
+      title: essayTitle,
+      subject: subject,
+      date: new Date(),
+      ...evaluatedData,
+    };
+    addCoursework(data);
+    toast({
+      title: "Evaluation Complete",
+      description: "Your file has been successfully evaluated.",
+      variant: "success",
+    });
 
     setTimeout(() => {
-      const fileId = uuidv4();
-      const evaluatedData = subject
-        ? EvaluationData[subject]
-        : EvaluationData[courseType];
-      const data = {
-        id: fileId,
-        file: pdfFile,
-        fileName: fileName,
-        courseName: courseType,
-        title: essayTitle,
-        subject: subject,
-        date: new Date(),
-        ...evaluatedData,
-      };
-      addCoursework(data);
-      toast({
-        title: "Evaluation Complete",
-        description: "Your file has been successfully evaluated.",
-        variant: "success",
-      });
       setIsEvaluating(false);
       router.push(`/coursework/${fileId}`);
     }, 1000);
@@ -260,7 +260,7 @@ const CourseWorkForm = () => {
               checkIsDisabled() ? "opacity-50 cursor-not-allowed" : ""
             }`}
             onClick={handleCourseEvaluation}
-            disabled={checkIsDisabled()}
+            disabled={checkIsDisabled() && isEvaluating}
           >
             <SvgEvaluationIcon />
             {isEvaluating ? (
