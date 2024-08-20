@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import Link from "next/link";
 
-const NavItem = ({ href, icon, isActive }) => {
+const NavItem = ({ href, icon, isActive, label }) => {
   return (
     <Link
       href={href}
@@ -14,6 +14,7 @@ const NavItem = ({ href, icon, isActive }) => {
       )}
     >
       {icon}
+      {label}
     </Link>
   );
 };

@@ -16,7 +16,7 @@ const Sidebar = () => {
                 <NavItem
                   href={link.href}
                   icon={link.icon}
-                  label={link.label}
+                  label={""}
                   isActive={link.href == "/coursework"}
                 />
               </li>

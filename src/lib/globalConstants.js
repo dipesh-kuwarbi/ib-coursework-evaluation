@@ -21,7 +21,7 @@ export const links = [
   },
   {
     href: "/",
-    label: "coursework",
+    label: "Quiz",
     icon: <SvgQuiz />,
   },
 ];
