@@ -61,8 +61,14 @@ const CourseWorkExample = () => {
             })}
           </div>
           <div className="flex flex-wrap items-start gap-4 self-stretch overflow-hidden sm:grid sm:grid-cols-2">
-            {exampleList?.map((detail) => {
-              return <CourseCard key={detail.id} details={detail} isExample />;
+            {exampleList?.map((detail, index) => {
+              return (
+                <CourseCard
+                  key={detail.id + index}
+                  details={detail}
+                  isExample
+                />
+              );
             })}
           </div>
         </div>

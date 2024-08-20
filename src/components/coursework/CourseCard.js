@@ -89,7 +89,7 @@ const CourseCard = ({ details, isExample }) => {
           </div>
           {courseInfo.map((info, index) => (
             <div
-              key={index}
+              key={info.label + index}
               className="flex items-center gap-[3px] rounded-full bg-white p-[2px] pr-2 group-hover:scale-110"
             >
               <img

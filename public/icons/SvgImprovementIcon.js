@@ -6,7 +6,7 @@ const SvgImprovementIcon = () => {
       height="20"
       viewBox="0 0 20 20"
       fill="none"
-      class="size-5 shrink-0"
+      className="size-5 shrink-0"
     >
       <mask
         id="mask0_3031_3746"

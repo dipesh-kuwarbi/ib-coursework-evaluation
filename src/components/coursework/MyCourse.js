@@ -22,10 +22,10 @@ const MyCourse = () => {
           <div className="flex flex-wrap items-start gap-4 self-stretch overflow-hidden sm:grid sm:grid-cols-2">
             {sortedList?.map((detail, index) => {
               if (detail && index < 2 && !isViewAll) {
-                return <CourseCard key={detail.id} details={detail} />;
+                return <CourseCard key={detail.id + index} details={detail} />;
               }
               if (detail && isViewAll) {
-                return <CourseCard key={detail.id} details={detail} />;
+                return <CourseCard key={detail.id + index} details={detail} />;
               }
             })}
           </div>

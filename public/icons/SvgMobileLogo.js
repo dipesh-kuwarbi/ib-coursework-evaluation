@@ -7,7 +7,7 @@ export const SvgMobileIcon = () => (
     fill="none"
     className="h-[38px] w-auto"
   >
-    <g clip-path="url(#clip0_2465_1840)">
+    <g clipPath="url(#clip0_2465_1840)">
       <mask
         id="mask0_2465_1840"
         maskUnits="userSpaceOnUse"

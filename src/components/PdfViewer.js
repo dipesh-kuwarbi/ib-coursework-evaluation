@@ -21,7 +21,7 @@ const PdfViewer = ({
   const { EnterFullScreenButton } = fullScreenPluginInstance;
 
   const pdfBlob = useMemo(() => {
-    if (!isExample) {
+    if (!isExample && pdfFile && typeof pdfFile == "string") {
       const byteCharacters = atob(pdfFile.split(",")[1]);
       const byteNumbers = new Array(byteCharacters.length);
       for (let i = 0; i < byteCharacters.length; i++) {

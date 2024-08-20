@@ -151,7 +151,7 @@ const CourseWorkForm = () => {
                     <ScrollArea>
                       <div className="relative overflow-hidden size-[140px] rounded-[6px] border border-neutrals-200">
                         <div
-                          class="absolute right-[-2px] top-[-2px] z-99 cursor-pointer rounded-full border bg-white p-[2px]"
+                          className="absolute right-[-2px] top-[-2px] z-99 cursor-pointer rounded-full border bg-white p-[2px]"
                           onClick={() => setPreviewUrl("")}
                         >
                           <SvgCrossIcon />
@@ -269,15 +269,15 @@ const CourseWorkForm = () => {
                 <span>Evaluating...</span>
               </>
             ) : (
-              <span class="leading-5">Evaluate your Score</span>
+              <span className="leading-5">Evaluate your Score</span>
             )}
           </button>
         </div>
       </div>
-      <div class="hidden justify-center md:min-w-[250px] lg:flex lg:min-w-[290px]">
+      <div className="hidden justify-center md:min-w-[250px] lg:flex lg:min-w-[290px]">
         <img
           alt="eveluation image"
-          fetchpriority="high"
+          fetchPriority="high"
           width="390"
           height={528}
           decoding="async"

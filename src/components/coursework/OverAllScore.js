@@ -12,7 +12,8 @@ const OverAllScore = ({ evaluationDetails, classes }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  const percentage = (evaluationDetails.score / evaluationDetails.total) * 100;
+  const percentage =
+    (evaluationDetails?.score / evaluationDetails?.total) * 100;
 
   if (loading) {
     return (

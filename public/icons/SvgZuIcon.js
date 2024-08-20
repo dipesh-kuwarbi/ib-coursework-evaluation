@@ -28,8 +28,8 @@ const SvgZuIcon = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(9.99984 10.0001) rotate(90) scale(8.33333)"
         >
-          <stop stop-color="#FFC657" />
-          <stop offset="1" stop-color="#FFBA36" />
+          <stop stopColor="#FFC657" />
+          <stop offset="1" stopColor="#FFBA36" />
         </radialGradient>
         <radialGradient
           id="paint1_radial_2_4531"
@@ -39,8 +39,8 @@ const SvgZuIcon = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(10.0002 9.99992) rotate(90) scale(6.66667)"
         >
-          <stop stop-color="#FFCC9D" />
-          <stop offset="1" stop-color="#F29100" />
+          <stop stopColor="#FFCC9D" />
+          <stop offset="1" stopColor="#F29100" />
         </radialGradient>
       </defs>
     </svg>

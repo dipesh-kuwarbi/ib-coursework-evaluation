@@ -9,7 +9,7 @@ export const SvgThreeLineIcon = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    class="lucide lucide-menu "
+    className="lucide lucide-menu "
   >
     <line x1="4" x2="20" y1="12" y2="12"></line>
     <line x1="4" x2="20" y1="6" y2="6"></line>
