@@ -12,7 +12,7 @@ const MyCourse = () => {
 
   if (sortedList.length > 0) {
     return (
-      <div className="flex w-full flex-col justify-start gap-10 md:w-[600px] lg:w-full xl:w-[906px]">
+      <div className="flex w-full flex-col justify-start gap-10 md:w-[600px] lg:w-full xl:w-[906px] px-4 sm:px-0">
         <div className="flex max-w-screen-sm-2 flex-col gap-3 self-stretch lg:max-w-[900px]">
           <div className="flex items-center justify-start gap-2.5 self-stretch">
             <p className="text-[20px] font-bold leading-[normal] text-neutrals-700">

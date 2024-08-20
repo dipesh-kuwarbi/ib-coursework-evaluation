@@ -29,14 +29,14 @@ const CourseWorkExample = () => {
 
   if (exampleList?.length > 0) {
     return (
-      <div className="flex w-full flex-col justify-start gap-10 md:w-[600px] lg:w-full xl:w-[906px]">
-        <div className="flex max-w-screen-sm-2 flex-col gap-3 self-stretch lg:max-w-[900px]">
+      <div className="flex w-full flex-col justify-start gap-10 md:w-[600px] lg:w-full xl:w-[906px] px-4 sm:px-0">
+        <div className="flex max-w-full-sm-2 flex-col gap-3 self-stretch lg:max-w-[900px]">
           <div className="flex items-center justify-start gap-2.5 self-stretch">
             <p className="text-[20px] font-bold leading-[normal] text-neutrals-700">
               Explore Coursework
             </p>
           </div>
-          <div className="flex flex-row items-center justify-start gap-3 self-stretch">
+          <div className="flex flex-wrap items-center justify-start gap-2 self-stretch">
             {filters.map((name) => {
               const active = name === filter;
               return (
@@ -60,6 +60,7 @@ const CourseWorkExample = () => {
               );
             })}
           </div>
+
           <div className="flex flex-wrap items-start gap-4 self-stretch overflow-hidden sm:grid sm:grid-cols-2">
             {exampleList?.map((detail, index) => {
               return (

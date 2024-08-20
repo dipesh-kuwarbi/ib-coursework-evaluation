@@ -108,9 +108,9 @@ const CourseWorkForm = () => {
     });
 
     setTimeout(() => {
-      setIsEvaluating(false);
       router.push(`/coursework/${fileId}`);
-    }, 1000);
+      setIsEvaluating(false);
+    }, 500);
   }, [addCoursework, subject, courseType, pdfFile, router, essayTitle]);
 
   const checkIsDisabled = () => {
@@ -121,7 +121,7 @@ const CourseWorkForm = () => {
   };
 
   return (
-    <section className="mx-auto flex w-fit flex-col gap-4 sm:flex-row">
+    <section className="mx-auto flex w-fit flex-col gap-4 sm:flex-row px-4 sm:px-0">
       <div className="flex w-full max-w-screen-sm-2 flex-col justify-end gap-6">
         <p className="text-[24px] font-extrabold leading-[normal] text-[#1e2026] lg:text-[32px]">
           Hey IB Folks ! Unsure about the quality of your answers?
