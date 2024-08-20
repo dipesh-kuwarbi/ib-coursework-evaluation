@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# IB Coursework Evaluation Web Application
+
+## Objective
+
+This web application is designed to evaluate International Baccalaureate (IB) coursework. Built using Next.js 14, TailwindCSS, Zustand, and Shadcn UI components, the application mirrors the "ZuAi" interface design and incorporates multiple features for coursework management, evaluation, and display.
+
+## Tech Stack
+
+- **Next.js 14**: Framework for building the application.
+- **TailwindCSS**: For styling and responsive layouts.
+- **Zustand**: State management for handling global states.
+- **Shadcn UI**: Component library for user interface elements.
+
+## Key Features
+
+### 1. File Upload
+
+- Drag-and-drop support for PDF files.
+- Manual file upload option.
+- Display file size limit (e.g., "Limit 25 MB per file").
+- Store uploaded files using browser local storage.
+
+### 2. Local Storage Implementation
+
+- Save uploaded files and their metadata locally.
+- Ensure data persistence across page reloads.
+- Efficient retrieval of stored files and associated data.
+
+### 3. Coursework Details Form
+
+- Dropdowns for selecting "Coursework Type" and "Subject".
+- Text input for entering the essay title.
+- Store form data locally and link it with the uploaded file.
+
+### 4. Evaluation Display
+
+- Use of dummy data for all evaluation criteria.
+- Overall score displayed with a circular progress indicator.
+- Detailed breakdown of scores by criteria (A, B, C).
+- Display evaluation date and allow local storage and retrieval of results.
+
+### 5. Coursework List
+
+- List previously uploaded coursework with relevant details (title, subject, word count, etc.).
+- Data is fetched from local storage.
+
+### 6. Explore Coursework Section
+
+- Tabbed interface to switch between different coursework categories.
+- Grid layout to display coursework examples visually.
+
+## About This Repository
+
+This repository contains the source code for the IB Coursework Evaluation web application. The project demonstrates how to manage coursework data using a modern tech stack and includes detailed evaluations and metadata storage. Each feature is designed with user experience and accessibility in mind, and the interface closely follows the provided design guidelines.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/dipesh-kuwarbi/ib-coursework-evaluation.git
+
+   ```
+
+2. Install dependencies:
+
+   ```npm install
+
+   ```
+
+3. Running the Development Server
+
+```npm run dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Building for Production
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
