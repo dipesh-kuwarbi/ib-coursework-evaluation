@@ -73,18 +73,21 @@ This repository contains the source code for the IB Coursework Evaluation web ap
 
 2. Install dependencies:
 
-   ```npm install
+   ```bash
+   npm install
 
    ```
 
 3. Running the Development Server
 
-```npm run dev
+```bash
+npm run dev
 
 ```
 
 4. Building for Production
 
-```npm run build
+```bash
+npm run build
 
 ```
