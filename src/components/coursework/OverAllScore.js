@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { formatDate } from "@/lib/utils";
 import SvgScoreIndicator from "../../../public/icons/SvgScoreIndicator";
 import { Skeleton } from "../ui/skeleton";
+import { transitionClass } from "@/lib/globalConstants";
 
 const OverAllScore = ({ evaluationDetails, classes }) => {
   const [loading, setLoading] = useState(true);
@@ -11,8 +12,7 @@ const OverAllScore = ({ evaluationDetails, classes }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  const percentage =
-    (evaluationDetails.score / evaluationDetails.totalScore) * 100;
+  const percentage = (evaluationDetails.score / evaluationDetails.total) * 100;
 
   if (loading) {
     return (
@@ -37,7 +37,7 @@ const OverAllScore = ({ evaluationDetails, classes }) => {
 
   return (
     <div
-      className={`transition-all duration-300 ease-in-out transform hover:shadow-2xl w-full items-center justify-between gap-7 rounded-3xl bg-white p-3 pl-6 ${
+      className={`${transitionClass} hover:shadow-2xl w-full items-center justify-between gap-7 rounded-3xl bg-white p-3 pl-6 ${
         classes ? classes : "hidden sm:flex"
       }`}
     >

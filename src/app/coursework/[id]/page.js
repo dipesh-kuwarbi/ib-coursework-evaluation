@@ -4,6 +4,7 @@ import PdfViewer from "@/components/PdfViewer";
 import CriteriaDetailsCard from "@/components/coursework/CriteriaDetailsCard";
 import OverAllScore from "@/components/coursework/OverAllScore";
 import { Button } from "@/components/ui/button";
+import { transitionClass } from "@/lib/globalConstants";
 import { cn } from "@/lib/utils";
 import { useCourseworkStore } from "@/store/useCourseWork";
 import { ArrowRight } from "lucide-react";
@@ -20,7 +21,6 @@ export default function CourseEvaluationPage() {
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
   useEffect(() => {
-    // Simulate loading time between 1.5 and 3.5 seconds
     const loadingTime = Math.floor(Math.random() * (3500 - 1500 + 1)) + 1500;
     const timer = setTimeout(() => setLoading(false), loadingTime);
     return () => clearTimeout(timer);
@@ -84,7 +84,7 @@ export default function CourseEvaluationPage() {
       )}
       <div className={cn(`space-y-2.5 ${isCollapsed ? "w-full" : false}`)}>
         <OverAllScore evaluationDetails={courseWork} />
-        {courseWork?.criterias.map((criteriaDetail) => (
+        {courseWork?.criterias?.map((criteriaDetail) => (
           <div key={`${isCollapsed + criteriaDetail.id}`}>
             <CriteriaDetailsCard
               loading={loading}
@@ -93,7 +93,12 @@ export default function CourseEvaluationPage() {
             />
           </div>
         ))}
-        <div className="cursor-pointer transition-all duration-300 ease-in-out transform hover:shadow-2xl hover:scale-105 rounded-3xl bg-white p-3 pl-6 flex w-fit items-center">
+        <div
+          className={
+            "cursor-pointer hover:shadow-2xl hover:scale-105 rounded-3xl bg-white p-3 pl-6 flex w-fit items-center" +
+            transitionClass
+          }
+        >
           <p className="text-xl font-extrabold leading-[normal] text-brand-primary">
             Check detailed Evaluation
           </p>

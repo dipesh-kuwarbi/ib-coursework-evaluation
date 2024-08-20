@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import SvgLikeIcon from "../../public/icons/SvgLikeIcon";
 import SvgDislikeIcon from "../../public/icons/SvgDislikeIcons";
+import { transitionClass } from "@/lib/globalConstants";
 
 const LikeDislikeButtons = () => {
   const [isLiked, setIsLiked] = useState(false);
@@ -11,9 +12,11 @@ const LikeDislikeButtons = () => {
   const [showFlyingDislike, setShowFlyingDislike] = useState(false);
 
   const commonButtonClasses =
-    "flex size-[28px] items-center justify-center rounded-full transition-all duration-300 ease-in-out transform hover:scale-105";
+    "flex size-[28px] items-center justify-center rounded-full hover:scale-105" +
+    transitionClass;
   const flyingIconClasses =
-    "flex items-center justify-center size-[28px] text-white transition-all duration-300 ease-in-out transform rounded-full absolute";
+    "flex items-center justify-center size-[28px] text-white rounded-full absolute" +
+    transitionClass;
 
   const handleLikeClick = () => {
     setIsLiked(!isLiked);
@@ -34,7 +37,6 @@ const LikeDislikeButtons = () => {
 
   return (
     <div className="relative flex gap-5">
-      {/* Like Button */}
       <Button
         onClick={handleLikeClick}
         variant="outline"
@@ -44,8 +46,6 @@ const LikeDislikeButtons = () => {
       >
         <SvgLikeIcon />
       </Button>
-
-      {/* Dislike Button */}
       <Button
         onClick={handleDislikeClick}
         variant="outline"
@@ -55,8 +55,6 @@ const LikeDislikeButtons = () => {
       >
         <SvgDislikeIcon />
       </Button>
-
-      {/* Flying Like Effect */}
       <AnimatePresence>
         {showFlyingLike && (
           <motion.div
@@ -69,8 +67,6 @@ const LikeDislikeButtons = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Flying Dislike Effect */}
       <AnimatePresence>
         {showFlyingDislike && (
           <motion.div

@@ -1,6 +1,36 @@
+import SvgCoursework from "../../public/icons/SvgCoursework";
+import SvgQuestionBank from "../../public/icons/SvgQuestionBank";
+import SvgQuiz from "../../public/icons/SvgQuiz";
+import SvgStudyNotes from "../../public/icons/SvgStudyNotes";
+
+export const links = [
+  {
+    href: "/coursework",
+    label: "coursework",
+    icon: <SvgCoursework />,
+  },
+  {
+    href: "/",
+    label: "Study Notes",
+    icon: <SvgStudyNotes />,
+  },
+  {
+    href: "/",
+    label: "Question Bank",
+    icon: <SvgQuestionBank />,
+  },
+  {
+    href: "/",
+    label: "coursework",
+    icon: <SvgQuiz />,
+  },
+];
+
 export const EvaluationData = {
   "Tok Essay": {
     Remark: "Average",
+    course: "Tok Essay",
+    example: "Tok Example",
     totalWords: 7785,
     totalTime: 29.6,
     score: 12,
@@ -68,6 +98,8 @@ export const EvaluationData = {
   },
   "Business Management": {
     Remark: "Poor",
+    course: "Extended Essay",
+    example: "IO Example",
     totalWords: 2213,
     totalTime: 8.4,
     color: "#EB751F",
@@ -148,6 +180,8 @@ export const EvaluationData = {
   Economics: {
     Remark: "Excellent",
     color: "#3BC289",
+    course: "Extended Essay",
+    example: "EE Example",
     totalWords: 6844,
     totalTime: 26.5,
     score: 10,
@@ -196,6 +230,8 @@ export const EvaluationData = {
   "Language And Literature": {
     Remark: "Good",
     color: "#3BC289",
+    course: "Extended Essay",
+    example: "EE Example",
     totalWords: 9876,
     totalTime: 37.5,
     score: 24,
@@ -298,11 +334,13 @@ export const EvaluationData = {
       },
     ],
   },
-  "Internal Assessment": {
+  Mathematics: {
     Remark: "Poor",
     score: 2,
+    course: "Internal Assessment",
+    example: "IA Example",
     color: "#EB751F",
-    totalScore: 20,
+    total: 20,
     totalWords: 3453,
     totalTime: 23.5,
     headline: "",
@@ -310,7 +348,7 @@ export const EvaluationData = {
       {
         id: "A",
         name: "Presentation",
-        totalScore: 4,
+        total: 4,
         color: "#EB751F",
         score: 1,
         headline:
@@ -325,7 +363,7 @@ export const EvaluationData = {
       {
         id: "B",
         name: "Mathematical Communication",
-        totalScore: 3,
+        total: 3,
         color: "#EB751F",
         score: 1,
         headline:
@@ -340,7 +378,7 @@ export const EvaluationData = {
       {
         id: "C",
         name: "Personal Engagement",
-        totalScore: 3,
+        total: 3,
         color: "#EB751F",
         score: 0,
         headline:
@@ -354,7 +392,7 @@ export const EvaluationData = {
       {
         id: "D",
         name: "Reflection",
-        totalScore: 3,
+        total: 3,
         color: "#EB751F",
         score: 0,
         headline:
@@ -369,7 +407,7 @@ export const EvaluationData = {
       {
         id: "E",
         name: "Use of Mathematics",
-        totalScore: 6,
+        total: 6,
         color: "#EB751F",
         score: 0,
         headline:
@@ -389,4 +427,14 @@ export const courseTypeOptions = [
   "Tok Essay",
   "Extended Essay",
   "Internal Assessment",
+];
+
+export const transitionClass =
+  "transition-all duration-300 ease-in-out transform";
+
+export const gradients = [
+  "linear-gradient(90deg, #FAEDEE 0%, #FBF5ED 100%)",
+  "linear-gradient(90deg, #FBF5ED 0%, #F7FAEE 100%)",
+  "linear-gradient(90deg, #F7FAEE 0%, #EDF2FB 100%)",
+  "linear-gradient(90deg, #EDF2FB 0%, #FAEDEE 100%)",
 ];

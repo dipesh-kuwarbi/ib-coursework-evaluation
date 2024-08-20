@@ -12,6 +12,7 @@ import {
   StrengthsList,
 } from "./EvaluationDetailComponents";
 import { Skeleton } from "../ui/skeleton";
+import { transitionClass } from "@/lib/globalConstants";
 
 const CriteriaDetailsCard = ({ detail, isCollapsed, loading }) => {
   const [isOpen, setIsOpen] = useState(isCollapsed);
@@ -19,7 +20,7 @@ const CriteriaDetailsCard = ({ detail, isCollapsed, loading }) => {
   if (loading) {
     return (
       <Card
-        className={`transition-all duration-300 ease-in-out transform hover:shadow-2xl w-full space-y-5 rounded-3xl bg-white ${
+        className={`${transitionClass} hover:shadow-2xl w-full space-y-5 rounded-3xl bg-white ${
           isOpen ? "flex-1 p-4" : "flex h-[82px] items-center"
         }`}
       >
@@ -58,7 +59,7 @@ const CriteriaDetailsCard = ({ detail, isCollapsed, loading }) => {
 
   return (
     <Card
-      className={`transition-all duration-300 ease-in-out transform hover:shadow-2xl w-full space-y-5 rounded-3xl bg-white ${
+      className={`${transitionClass} hover:shadow-2xl w-full space-y-5 rounded-3xl bg-white ${
         isOpen ? "flex-1 p-4" : "flex h-[82px] items-center"
       }`}
     >

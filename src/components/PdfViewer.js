@@ -6,6 +6,7 @@ import { fullScreenPlugin } from "@react-pdf-viewer/full-screen";
 import { zoomPlugin } from "@react-pdf-viewer/zoom";
 import SvgFullScreenIcon from "../../public/icons/SvgFullScreenIcon";
 import SvgExpandIcon from "../../public/icons/SvgExpandIcon";
+import { transitionClass } from "@/lib/globalConstants";
 
 const PdfViewer = ({ pdfFile, pdfName, isCollapsed, handleCollapse }) => {
   const zoomPluginInstance = zoomPlugin();
@@ -29,7 +30,7 @@ const PdfViewer = ({ pdfFile, pdfName, isCollapsed, handleCollapse }) => {
     <div
       className={`w-full max-w-[972px] ${
         isCollapsed ? false : "flex-1"
-      } overflow-hidden transition-all duration-300 ease-in-out transform hover:shadow-2xl rounded-3xl rounded-b-none sm:min-w-[280px] lg:min-w-[50%]`}
+      } ${transitionClass} overflow-hidden hover:shadow-2xl rounded-3xl rounded-b-none sm:min-w-[280px] lg:min-w-[50%]`}
     >
       <div className="flex flex-wrap justify-between gap-2 bg-[rgba(255,255,255,0.48)] p-3">
         <div className="max-w-[184px] rounded-xl bg-white px-3 py-1">

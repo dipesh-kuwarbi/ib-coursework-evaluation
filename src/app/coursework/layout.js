@@ -1,10 +1,11 @@
+import LeftSidebar from "@/components/LeftSidebar";
 import Sidebar from "@/components/Sidebar";
 
 export default function CourseworkLayout({ children }) {
   return (
     <>
-      <header class="sticky top-0 z-[100] flex h-[60px] w-full items-center justify-between bg-white pl-0 pr-3 sm:hidden md:pl-[42px] md:pr-10">
-        <div class="grid h-11 w-28 place-items-center">
+      <header className="sticky top-0 z-[100] flex h-[60px] w-full items-center justify-between bg-white pl-0 pr-3 sm:hidden md:pl-[42px] md:pr-10">
+        <div className="grid h-11 w-28 place-items-center">
           <a href="/dashboard">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +13,7 @@ export default function CourseworkLayout({ children }) {
               height="38"
               viewBox="0 0 76 38"
               fill="none"
-              class="h-[38px] w-auto"
+              className="h-[38px] w-auto"
             >
               <g clip-path="url(#clip0_2465_1840)">
                 <mask
@@ -72,8 +73,8 @@ export default function CourseworkLayout({ children }) {
             </svg>
           </a>
         </div>
-        <div class="flex flex-row items-center gap-2">
-          <div class="md:hidden">
+        <div className="flex flex-row items-center gap-2">
+          <div className="md:hidden">
             <div>
               <button
                 type="button"
@@ -81,9 +82,9 @@ export default function CourseworkLayout({ children }) {
                 aria-haspopup="menu"
                 aria-expanded="false"
                 data-state="closed"
-                class="outline-none"
+                className="outline-none"
               >
-                <div class="flex size-[32px] items-center justify-center">
+                <div className="flex size-[32px] items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -109,11 +110,7 @@ export default function CourseworkLayout({ children }) {
       <div className="flex size-full xl:space-x-2">
         <Sidebar />
         {children}
-        <div class="hidden w-[96px] flex-col  items-end gap-2 p-3 sm:flex">
-          <button class="hidden h-[40px] items-center rounded-[24px] bg-brand-primary px-4 py-1 text-sm font-bold leading-[normal] text-white shadow-[0_2px_8px_0px_rgba(0,0,0,0.04)] sm:flex">
-            Log in
-          </button>
-        </div>
+        <LeftSidebar />
       </div>
     </>
   );

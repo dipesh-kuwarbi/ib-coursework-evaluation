@@ -2,14 +2,13 @@ import SvgArrowIcon from "../../../public/icons/SvgArrowIcon";
 import SvgScoreIndicator from "../../../public/icons/SvgScoreIndicator";
 import SvgImprovementIcon from "../../../public/icons/SvgImprovementIcon";
 import SvgCheckIcon from "../../../public/icons/SvgCheckIcon";
-import { Skeleton } from "../ui/skeleton";
 
 const headingClasses = "text-xl font-extrabold leading-normal text-black";
 const listItemClasses = "flex items-start gap-3";
 const textClasses = "text-sm font-bold leading-normal text-neutrals-800";
 
 export const CriteriaHeader = ({ isCollapsed, detail }) => {
-  const percentage = (detail.score / detail.totalScore) * 100;
+  const percentage = (detail.score / detail.total) * 100;
   return (
     <div
       className={`flex items-center gap-4 cursor-pointer ${
